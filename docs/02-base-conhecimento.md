@@ -4,15 +4,11 @@
 
 Descreva se usou os arquivos da pasta `data`, por exemplo:
 
-| Arquivo | Formato | Utilização no Agente |
-|---------|---------|---------------------|
-| `historico_atendimento.csv` | CSV | Contextualizar interações anteriores |
-| `perfil_investidor.json` | JSON | Personalizar recomendações |
-| `produtos_financeiros.json` | JSON | Sugerir produtos adequados ao perfil |
-| `transacoes.csv` | CSV | Analisar padrão de gastos do cliente |
+| Fonte | Utilização no Agente |
+|--------|---------------------|
+| Yahoo Finance | Coleta de dados financeiros e notícias |
+| GDELT | Coleta de informações sobre ativos financeiros |
 
-> [!TIP]
-> **Quer um dataset mais robusto?** Você pode utilizar datasets públicos do [Hugging Face](https://huggingface.co/datasets) relacionados a finanças, desde que sejam adequados ao contexto do desafio.
 
 ---
 
@@ -20,7 +16,7 @@ Descreva se usou os arquivos da pasta `data`, por exemplo:
 
 > Você modificou ou expandiu os dados mockados? Descreva aqui.
 
-[Sua descrição aqui]
+Não irei utilizar os dados fornecidos, mas sim adaptar o uso de bibliotecas para que o agente seja capaz de coletá-las.
 
 ---
 
@@ -29,12 +25,12 @@ Descreva se usou os arquivos da pasta `data`, por exemplo:
 ### Como os dados são carregados?
 > Descreva como seu agente acessa a base de conhecimento.
 
-[ex: Os JSON/CSV são carregados no início da sessão e incluídos no contexto do prompt]
+O agente será integrado com ferramentas que permitam a execução de programas em python. Uma vez que isso é possível, será possível que o agente crie, execute e obtenha informações advindas das bases de dados Yahoo Finance e de notícias a partir do GDELT. Com isso o agente será capaz de trazer informações e executar pequenos códigos que tragam pequenas análises de código.
 
 ### Como os dados são usados no prompt?
 > Os dados vão no system prompt? São consultados dinamicamente?
 
-[Sua descrição aqui]
+Os dados serão consultados e mantidos em uma pequena memória caso o tema seja o mesmo (para evitar novas requisições quando não é necessário). Uma vez com os dados, o LLM será capaz de trazer informações de sentimento do mercado ou informações importantes trazidas pela consulta. O modelo também será capaz de executar pequenos scripts que realizem cálculos com os dados utilizados e trazer pequenas informações/insights para o analista utilizando o agente.
 
 ---
 
